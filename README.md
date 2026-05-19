@@ -2,6 +2,8 @@
 
 这个目录提供了一个放在 `reference/` 下的独立 PMF 工作区，用来让 PMF 相关实验在不干扰主课程代码的前提下持续演化。
 
+当前仓库边界约定是：所有 PMF 专用入口、理论推导实现、CSV 生成和绘图脚本都只放在这个 `reference/sortingPmf` 工作区中，不再放回主项目 `src/cpt204/project`。
+
 它并不是完全独立于主仓库源码的。`simulation` 层会刻意复用 `src/cpt204/project` 下的真实排序实现，因此这个工具在编译时仍然需要依赖主项目的 classpath。
 
 Java 入口类是：
@@ -70,13 +72,13 @@ sh reference/sortingPmf/scripts/run_reference_pmf.sh \
   --output=reference/sortingPmf/generated/pmf_exact_n145_forced.csv
 ```
 
-你之前输入的：
+与此同时:
 
 ```sh
 sh reference/sortingPmf/scripts/run_reference_pmf.sh 1000 --pmf-only --exact-pmf-only --forces
 ```
 
-现在也可以工作，因为 `--forces` 已经被兼容成 `--force-exact-quicksort-pmf` 的短别名。
+也可以工作，因为 `--forces` 已经被兼容成 `--force-exact-quicksort-pmf` 的短别名。
 
 ## 构建
 
