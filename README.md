@@ -58,9 +58,7 @@ Java 入口类是：
 - `--forces`
 
 注意：
-
-- `--force` 不是用来 force quicksort PMF 的。
-- `--force` 的含义是：当你跑 `simulation` 时，允许在 `n > 9` 的情况下继续做 exact permutation enumeration。
+- `--force` 当 `n > 9` 的情况下继续做 exact permutation enumeration。
 - 如果你要 force 的是 PMF 分支里的 deterministic quicksort exact 递推，应当使用 `--force-exact-quicksort-pmf` 或它的别名。
 
 一个最直接的示例：
